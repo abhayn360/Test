@@ -141,17 +141,17 @@ const Dashboard = ({ route }) => {
           keyboardType="email-address"
           iconName="tag-multiple-outline"
         />
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: 10 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 5 }}>
         {!hasNfc?
-        <Text style={{}}>NFC not supported</Text>
+        <Text style={{marginLeft:5}}>NFC not supported</Text>
       :
-      <TouchableOpacity onPress={readNdef} style={{ backgroundColor: '#424242', borderRadius: 5, padding: 15 }}>
-      <Text style={{ color: '#fff' }}>Scan a Tag</Text>
+      <TouchableOpacity onPress={readNdef} style={styles.button}>
+      <Text style={{ color: '#fff' ,fontSize:12}}>Scan a Tag</Text>
     </TouchableOpacity>
       }
         
-          <TouchableOpacity onPress={AddTag} style={{ backgroundColor: '#424242', borderRadius: 5, padding: 15 }}>
-            <Text style={{ color: '#fff' }}>Add Tag</Text>
+          <TouchableOpacity onPress={AddTag} style={styles.button}>
+            <Text style={{ color: '#fff',fontSize:12 }}>Add Tag</Text>
           </TouchableOpacity>
         </View>
 
@@ -173,5 +173,12 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     marginTop: 10
+  },
+  button:{
+    backgroundColor: '#424242', 
+    borderRadius: 5,
+    padding: 10,
+    alignItems:'center',
+    justifyContent:'center'
   }
 })
